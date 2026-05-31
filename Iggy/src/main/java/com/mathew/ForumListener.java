@@ -17,6 +17,12 @@ public class ForumListener extends ListenerAdapter {
         if (event.getChannel() instanceof ThreadChannel) {
             ThreadChannel publicacion = (ThreadChannel) event.getChannel();
 
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
             if (publicacion.getParentChannel().getId().equals(CANAL_FORO_BUSCAR_EQUIPO)) {
                 
                 String mensaje = "📢 <@&" + ROL_CAPITANES_ID + "> NUEVO JUGADOR DISPONIBLE\n" +
